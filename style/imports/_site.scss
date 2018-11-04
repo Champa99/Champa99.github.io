@@ -1,0 +1,509 @@
+$glow-1: 0 0 1px;
+$glow-2: 0 0 2px;
+$glow-3: 0 0 6px;
+$glow-4: 0 0 12px;
+
+body {
+	background: #000;
+	color: rgba(255, 255, 255, .8);
+}
+
+.hero {
+	.parallax-hider {
+		background: url("../images/test2.png") no-repeat;
+		background-size: cover;
+		background-position: center bottom;
+		width: 100%;
+		height: 200px;
+		margin-top: -198px;
+
+		&.reverse {
+			margin-top: -710px;
+			transform: rotate(180deg);
+		}
+
+		&.move-it {
+			margin-top: 340px;
+		}
+
+		.down-icon {
+			text-align: center;
+			color: #fff;
+			font-size: 30px;
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0px;
+			margin: auto;
+			text-shadow: 0px 0px 5px #ff3f82;
+			cursor: pointer;
+		}
+	}
+
+	.parallax-container {
+		height: 700px;
+	}
+
+	.text-holder {
+		height: 700px;
+		width: 100%;
+		margin-top: -700px;
+		text-align: center;
+
+		.technologies {
+			background: rgba(0, 0, 0, .7);
+			padding: 8px 20px;
+			display: inline-block;
+
+			.tech {
+				height: 100px;
+				display: inline-block;
+				margin: 5px;
+
+				img {
+					height: 100px;
+					border-right: 1px solid rgba(255, 255, 255, .1);
+					padding: 8px;
+				}
+
+				&:nth-last-of-type(1) {
+
+					img {
+						border-right: 0;
+					}
+				}
+			}
+		}
+
+		.row {
+			margin-bottom: 0;
+		}
+
+		.big-text {
+			background: rgba(0, 0, 0, .7);
+			padding: 8px 20px;
+			color: #fff;
+			font-size: 55px;
+			font-weight: bolder;
+			display: inline-block;
+			margin-top: 220px;
+		}
+
+		.smaller-text {
+			background: rgba(0, 0, 0, .7);
+			padding: 8px 20px;
+			color: #fff;
+			font-size: 25px;
+			font-weight: normal;
+			display: inline-block;
+
+			span {
+				text-decoration: italic;
+				text-shadow: 0px 0px 10px #ff3f82;
+				color: #ff3f82;
+			}
+		}
+	}
+
+	.parallax-container .parallax img {
+		width: 100%;
+	}
+}
+
+h4.main-title {
+	color: #fff;
+	font-size: 70px;
+	font-weight: 100;
+	padding-top: 50px;
+
+	&.animate {
+		animation: blinkNeon 1s cubic-bezier(.07,1.19,.92,-0.03) forwards;
+	}
+}
+
+.spacing {
+	height: 60px;
+}
+
+.closer-look {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	z-index: 999;
+	text-align: center;
+	overflow-y: auto;
+
+	.neon-sign {
+		margin-top: 20px;
+	}
+
+	.info {
+		h2.title {
+			font-size: 70px;
+			margin-bottom: 0;
+			margin-top: 30px;
+		}
+
+		p.title-desc {
+			font-size: 30px;
+			margin-top: 0;
+		}
+	}
+
+	.images {
+		.preview {
+			width: 35%;
+			margin: 10px;
+		}
+	}
+
+	.close-button {
+		padding: 14px;
+		font-size: 24px;
+		cursor: pointer;
+		margin-top: 50px;
+	}
+
+	.tags {
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+		right: 0;
+		margin: auto;
+
+		.made-with {
+			margin: 0;
+			margin-bottom: 0px;
+			font-size: 24px;
+		}
+
+		.tag {
+			$neon-glow: #fa64ff;
+			$neon: #ff00de;
+
+			margin: 10px;
+			padding: 8px 20px;
+			font-size: 21px;
+			border-radius: 20px;
+			display: inline-block;
+			font-weight: bold;
+			background: #000 !important;
+			border: 3px solid $neon;
+			text-shadow: 0 0 5px rgba(255, 255, 255, .6), 0 0 10px rgba(255, 255, 255, .6), 0 0 15px rgba(255, 255, 255, .6),
+			0 0 20px $neon, 0 0 35px $neon, 0 0 40px $neon, 0 0 50px $neon, 0 0 75px $neon;
+			-webkit-text-stroke-width: 1px;
+			-webkit-text-stroke-color: #a74199;
+			box-shadow: $glow-1 $neon-glow, $glow-2 $neon-glow, $glow-3 $neon-glow, $glow-4 $neon-glow,
+				inset $glow-1 $neon-glow, inset $glow-2 $neon-glow, inset $glow-3 $neon-glow, inset $glow-4 $neon-glow;
+		}
+	}
+}
+
+.neon-sign {
+
+	border-radius: 20px;
+	padding: 8px;
+	margin-top: 40px;
+	text-align: center;
+
+	.inner-text {
+		font-size: 30px;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+
+		span {
+			animation: text-flicker 3s linear infinite;
+		}
+
+		&.preview {
+			font-size: 45px;
+		}
+	}
+
+	.over-text {
+		font-family: 'Codystar', cursive;
+		font-size: 35px;
+		font-weight: 500;
+		background: #000;
+		padding: 8px;
+		margin: auto;
+		margin-bottom: -40px;
+		width: 50%;
+		animation-delay: .5s !important;
+		color: transparent;
+		text-shadow: none;
+
+		&.preview {
+			font-size: 31px;
+		}
+	}
+
+	&.red {
+		$neon-glow: #ff6471;
+		$neon: #e71010;
+
+		background: #000 !important;
+		border: 3px solid $neon;
+		box-shadow: $glow-1 $neon-glow, $glow-2 $neon-glow, $glow-3 $neon-glow, $glow-4 $neon-glow,
+		inset $glow-1 $neon-glow, inset $glow-2 $neon-glow, inset $glow-3 $neon-glow, inset $glow-4 $neon-glow;
+
+		.inner-text {
+			text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+			0 0 20px $neon, 0 0 35px $neon, 0 0 40px $neon, 0 0 50px $neon, 0 0 75px $neon;
+			-webkit-text-stroke-width: 1px;
+			-webkit-text-stroke-color: #db0808;
+		}
+
+		.over-text {
+			animation: light-up-red 1s cubic-bezier(.31,1.68,.49,-0.5) forwards;
+		}
+	}
+
+	&.aqua {
+		$neon-glow: #64ff9f;
+		$neon: #10e0e7;
+
+		background: #000 !important;
+		border: 3px solid $neon;
+		box-shadow: $glow-1 $neon-glow, $glow-2 $neon-glow, $glow-3 $neon-glow, $glow-4 $neon-glow,
+		inset $glow-1 $neon-glow, inset $glow-2 $neon-glow, inset $glow-3 $neon-glow, inset $glow-4 $neon-glow;
+
+		.inner-text {
+			text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+			0 0 20px $neon, 0 0 35px $neon, 0 0 40px $neon, 0 0 50px $neon, 0 0 75px $neon;
+			-webkit-text-stroke-width: 1px;
+			-webkit-text-stroke-color: #008472;
+
+			span {
+				animation-delay: 1s !important;
+			}
+		}
+
+		.over-text {
+			animation: light-up-aqua 1s cubic-bezier(.31,1.68,.49,-0.5) forwards;
+		}
+	}
+
+	&.purple {
+		$neon-glow: #fa64ff;
+		$neon: #ff00de;
+
+		background: #000 !important;
+		border: 3px solid $neon;
+		box-shadow: $glow-1 $neon-glow, $glow-2 $neon-glow, $glow-3 $neon-glow, $glow-4 $neon-glow,
+		inset $glow-1 $neon-glow, inset $glow-2 $neon-glow, inset $glow-3 $neon-glow, inset $glow-4 $neon-glow;
+
+		.inner-text {
+			text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+			0 0 20px $neon, 0 0 35px $neon, 0 0 40px $neon, 0 0 50px $neon, 0 0 75px $neon;
+			-webkit-text-stroke-width: 1px;
+			-webkit-text-stroke-color: #ff00de;
+
+			span {
+				animation-delay: 1.3s !important;
+			}
+		}
+
+		.over-text {
+			animation: light-up-purple 1s cubic-bezier(.31,1.68,.49,-0.5) forwards;
+		}
+	}
+
+	&.yellow {
+		$neon-glow: #fff564;
+		$neon: #ffd900;
+
+		background: #000 !important;
+		border: 3px solid $neon;
+		box-shadow: $glow-1 $neon-glow, $glow-2 $neon-glow, $glow-3 $neon-glow, $glow-4 $neon-glow,
+		inset $glow-1 $neon-glow, inset $glow-2 $neon-glow, inset $glow-3 $neon-glow, inset $glow-4 $neon-glow;
+
+		.inner-text {
+			text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+			0 0 20px $neon, 0 0 35px $neon, 0 0 40px $neon, 0 0 50px $neon, 0 0 75px $neon;
+			-webkit-text-stroke-width: 1px;
+			-webkit-text-stroke-color: #afac00;
+
+			span {
+				animation-delay: 1.9s !important;
+			}
+		}
+
+		.over-text {
+			animation: light-up-yellow 1s cubic-bezier(.31,1.68,.49,-0.5) forwards;
+		}
+	}
+}
+
+.work-holder {
+	display: inline-block;
+	margin-bottom: 60px;
+	cursor: pointer;
+
+	.stacked-images {
+
+		.images {
+			background-size: cover;
+			background-position: center;
+			height: 300px;
+			width: 400px;
+		}
+
+		.first-image {
+			margin-left: 20px;
+			opacity: .5;
+			z-index: 1;
+			position: relative;
+			background-position: left;
+		}
+
+		.second-image {
+			margin-top: -280px;
+			z-index: 2;
+			position: relative;
+		}
+	}
+}
+
+.contact {
+	margin-top: 30px;
+	text-align: center;
+
+	.email-line {
+		font-size: 23px;
+
+		a {
+			text-shadow: 0px 0px 10px #ff3f82;
+			color: #ff3f82;
+		}
+	}
+}
+
+@keyframes light-up-red {
+	0% {
+		color: transparent;
+		text-shadow: none;
+	}
+
+	100% {
+		color: #fff;
+		text-shadow: $glow-1 rgb(255, 230, 0), $glow-2 rgb(255, 230, 0), $glow-3 rgb(255, 230, 0), $glow-4 rgb(255, 230, 0);
+	}
+}
+
+@keyframes light-up-aqua {
+	0% {
+		color: transparent;
+		text-shadow: none;
+	}
+
+	100% {
+		color: #fff;
+		text-shadow: $glow-1 rgb(27, 61, 255), $glow-2 rgb(27, 61, 255), $glow-3 rgb(27, 61, 255), $glow-4 rgb(27, 61, 255);
+	}
+}
+
+@keyframes light-up-purple {
+	0% {
+		color: transparent;
+		text-shadow: none;
+	}
+
+	100% {
+		color: #fff;
+		text-shadow: $glow-1 rgb(255, 102, 0), $glow-2 rgb(255, 102, 0), $glow-3 rgb(255, 102, 0), $glow-4 rgb(255, 102, 0);
+	}
+}
+
+@keyframes light-up-yellow {
+	0% {
+		color: transparent;
+		text-shadow: none;
+	}
+
+	100% {
+		color: #fff;
+		text-shadow: $glow-1 rgb(255, 0, 43), $glow-2 rgb(255, 0, 43), $glow-3 rgb(255, 0, 43), $glow-4 rgb(255, 0, 43);
+	}
+}
+
+
+@keyframes text-flicker {
+	0% {
+	  opacity:0.1;
+	}
+
+	2% {
+	  opacity:1;
+	}
+	
+	8% {
+	  opacity:0.1;
+	}
+
+	9% {
+	  opacity:1;
+	}
+
+	12% {
+	  opacity:0.1;
+	}
+
+	20% {
+	  opacity:1;
+	}
+	
+	25% {
+	  opacity:0.3;
+	}
+
+	30% {
+	  opacity:1;
+	}
+	
+	70% {
+	  opacity:0.7;
+	}
+	
+	72% {
+	  opacity:0.2;
+	}
+	
+	77% {
+	  opacity:.9;
+	}
+
+	100% {
+	  opacity:.9;
+	}
+}
+
+@keyframes blinkNeon {
+    0% {
+		text-shadow: none;
+	}
+
+	8% {
+		text-shadow: 0px 0px 10px #ff3f82;
+	}
+
+	14% {
+		text-shadow: none;
+	}
+
+	22% {
+		text-shadow: 0px 0px 20px #ff3f82;
+	}
+
+	28% {
+		text-shadow: none;
+	}
+
+	100% {
+		text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1), 
+		0 0 40px #ff00de , 0 0 70px #ff00de , 0 0 80px #ff00de , 0 0 100px #ff00de;
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: #ff00de;
+	}
+}
