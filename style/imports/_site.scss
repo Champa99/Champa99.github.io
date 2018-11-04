@@ -3,6 +3,14 @@ $glow-2: 0 0 2px;
 $glow-3: 0 0 6px;
 $glow-4: 0 0 12px;
 
+@mixin calcWidth($arg1, $arg2){
+	width: 100%;
+	max-width: -webkit-calc(#{$arg1} - #{$arg2});
+	max-width: -moz-calc(#{$arg1} - #{$arg2});
+	max-width: calc(#{$arg1} - #{$arg2});
+}
+
+
 body {
 	background: #000;
 	color: rgba(255, 255, 255, .8);
@@ -64,6 +72,10 @@ body {
 					height: 100px;
 					border-right: 1px solid rgba(255, 255, 255, .1);
 					padding: 8px;
+
+					@media only screen and (max-width: 425px) {
+						height: 65px;
+					}
 				}
 
 				&:nth-last-of-type(1) {
@@ -87,6 +99,12 @@ body {
 			font-weight: bolder;
 			display: inline-block;
 			margin-top: 220px;
+
+			@media only screen and (max-width: 425px) {
+
+				margin-top: 150px;
+				font-size: 45px;
+			}
 		}
 
 		.smaller-text {
@@ -136,6 +154,13 @@ h4.main-title {
 
 	.neon-sign {
 		margin-top: 20px;
+
+		.inner-text.preview {
+			@media only screen and (max-width: 425px) {
+
+				font-size: 32px;
+			}
+		}
 	}
 
 	.info {
@@ -155,6 +180,11 @@ h4.main-title {
 		.preview {
 			width: 35%;
 			margin: 10px;
+
+			@media only screen and (max-width: 425px) {
+
+				width: 95%;
+			}
 		}
 	}
 
@@ -163,6 +193,12 @@ h4.main-title {
 		font-size: 24px;
 		cursor: pointer;
 		margin-top: 50px;
+
+		@media only screen and (max-width: 425px) {
+
+			width: 100%;
+			text-align: center;
+		}
 	}
 
 	.tags {
@@ -171,6 +207,12 @@ h4.main-title {
 		left: 0;
 		right: 0;
 		margin: auto;
+
+		@media only screen and (max-width: 425px) {
+
+			position: relative;
+			margin-top: 20px;
+		}
 
 		.made-with {
 			margin: 0;
@@ -223,7 +265,7 @@ h4.main-title {
 
 	.over-text {
 		font-family: 'Codystar', cursive;
-		font-size: 35px;
+		font-size: 29px;
 		font-weight: 500;
 		background: #000;
 		padding: 8px;
@@ -336,10 +378,23 @@ h4.main-title {
 	}
 }
 
+.col-mobile-full {
+	@media only screen and (max-width: 425px) {
+
+		width: 100% !important;
+		margin-left: 0 !important;
+	}
+}
+
 .work-holder {
 	display: inline-block;
 	margin-bottom: 60px;
 	cursor: pointer;
+
+	@media only screen and (max-width: 425px) {
+
+		width: 100%;
+	}
 
 	.stacked-images {
 
@@ -348,6 +403,11 @@ h4.main-title {
 			background-position: center;
 			height: 300px;
 			width: 400px;
+
+			@media only screen and (max-width: 425px) {
+
+				width: 100%;
+			}
 		}
 
 		.first-image {

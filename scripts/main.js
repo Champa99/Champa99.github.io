@@ -33,7 +33,7 @@ const createWorkGroup = function(args) {
 
 	args.name = broken.join("");
 
-	dom += '<div class="col s6">' +
+	dom += '<div class="col s6 col-mobile-full">' +
 		'<div class="work-holder" data-id="' + workGroupsI + '">' +
 			'<div class="stacked-images">' + 
 				'<div class="first-image images z-depth-4" style="background-image: url(' + args.images[0] + ');"></div>' +
@@ -148,6 +148,7 @@ $(document).ready(function(){
 
 		$("#project-name").text(workGroups[id].name);
 		$("#project-desc").text(workGroups[id].undername);
+		$("#project-desc").css('width', workGroups[id].overWidth);
 
 		$("#dump-images").html('');
 
